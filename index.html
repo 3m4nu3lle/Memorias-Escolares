@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memórias & Redações | Portfólio</title>
+    
+    <!-- Fontes: Syne (Títulos modernos) e Outfit (Texto limpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Fundo Líquido Animado -->
+    <canvas id="liquid-bg"></canvas>
+
+    <!-- Cursor Customizado -->
+    <div class="cursor-blob" id="cursor"></div>
+
+    <!-- Header Flutuante -->
+    <header class="glass-header">
+        <div class="logo">PORTFÓLIO<span>.</span></div>
+        <nav class="nav">
+            <a href="#memorias">Memórias</a>
+            <a href="#redacoes">Redações</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1 class="hero-title">A JORNADA<br><span>CONTINUA</span></h1>
+        <p class="hero-sub">Uma coletânea de 12 anos, 3 fases e 17 reflexões.</p>
+        <div class="scroll-hint">
+            <div class="mouse"></div>
+            <span>Role para explorar</span>
+        </div>
+    </section>
+
+    <!-- Seção Memórias -->
+    <section id="memorias" class="section">
+        <div class="section-head">
+            <h2 class="section-title">01 // MEMÓRIAS</h2>
+            <p class="section-desc">Os registros visuais de cada etapa da vida escolar.</p>
+        </div>
+        
+        <!-- Grid de Memórias (Preenchido via JS) -->
+        <div class="grid-memorias" id="grid-memorias"></div>
+    </section>
+
+    <!-- Seção Redações -->
+    <section id="redacoes" class="section">
+        <div class="section-head">
+            <h2 class="section-title">02 // REDAÇÕES</h2>
+            <p class="section-desc">17 temas que moldaram a escrita ao longo dos anos.</p>
+        </div>
+
+        <div class="search-container glass-panel">
+            <input type="text" id="search" placeholder="Pesquisar nos arquivos..." class="search-input">
+            <span class="search-count" id="search-count">17 DOCUMENTOS</span>
+        </div>
+
+        <!-- Grid de Redações (Preenchido via JS) -->
+        <div class="grid-redacoes" id="grid-redacoes"></div>
+    </section>
+
+    <!-- Modal de Leitura (Glassmorphism) -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-glass">
+            <div class="modal-header">
+                <span class="modal-badge" id="modal-num">01</span>
+                <button class="btn-close" id="btn-close">✕</button>
+            </div>
+            <h2 class="modal-title" id="modal-title">Título</h2>
+            <p class="modal-tema" id="modal-tema">Tema</p>
+            
+            <div class="modal-body" id="modal-text">
+                <!-- Texto da redação -->
+            </div>
+
+            <div class="modal-footer">
+                <button id="btn-audio" class="btn-audio">
+                    <span class="icon">▶</span> OUVIR TEXTO
+                </button>
+                <div class="audio-visualizer" id="audio-viz">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts (GSAP e Lenis para animações ultra suaves) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
